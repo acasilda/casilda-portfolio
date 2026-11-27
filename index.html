@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Casilda A - Computer Science Engineering Student Portfolio">
+    <meta name="description"
+          content="Casilda A - Computer Science Engineering Student Portfolio">
+
     <meta name="author" content="Casilda A">
     <meta name="robots" content="index, follow">
 
@@ -21,58 +23,123 @@
         Skip to main content
     </a>
 
-    <!-- Header -->
+    <!-- NAVIGATION -->
     <header class="header">
+
         <nav class="navbar" aria-label="Main navigation">
 
-            <a href="index.html" class="logo">Casilda<span>.</span></a>
+            <a href="index.html" class="logo">
+                Casilda<span>.</span>
+            </a>
 
             <ul class="nav-links">
                 <li><a href="#home" aria-current="page">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
 
             <button id="theme-toggle"
                     class="theme-toggle"
+                    type="button"
                     aria-label="Switch to dark mode">
                 🌙
             </button>
 
         </nav>
+
     </header>
 
     <main id="main-content">
 
-        <!-- Hero Section -->
+        <!-- HERO SECTION -->
         <section class="hero" id="home">
 
-            <div class="hero-content">
-                <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+            <div class="hero-container">
 
-                <h1>Hello, I'm <span>Casilda A</span></h1>
+                <div class="hero-content">
 
-                <h2>Computer Science Engineering Student</h2>
+                    <p class="welcome">
+                        WELCOME TO MY PORTFOLIO
+                    </p>
 
-                <p>
-                    Passionate about programming, web development,
-                    logical thinking and creating innovative solutions
-                    through technology.
-                </p>
+                    <h1>
+                        Hello, I'm <span>Casilda A</span>
+                    </h1>
 
-                <div class="hero-buttons">
-                    <a href="projects.html" class="btn">View My Projects</a>
-                    <a href="contact.html" class="btn secondary">Contact Me</a>
+                    <h2>
+                        Computer Science Engineering Student
+                    </h2>
+
+                    <p class="hero-description">
+                        Passionate about programming, web development,
+                        logical thinking and creating innovative
+                        solutions through technology.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#projects" class="btn">
+                            View My Projects →
+                        </a>
+
+                        <a href="#contact" class="btn secondary">
+                            Contact Me
+                        </a>
+
+                    </div>
+
                 </div>
+
+                <!-- LAPTOP ILLUSTRATION -->
+                <div class="hero-image">
+
+                    <div class="tech-circle circle-one">HTML</div>
+                    <div class="tech-circle circle-two">CSS</div>
+                    <div class="tech-circle circle-three">JS</div>
+                    <div class="tech-circle circle-four">🐍</div>
+
+                    <div class="laptop">
+
+                        <div class="laptop-screen">
+
+                            <div class="screen-top">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="code-icon">
+                                &lt;/&gt;
+                            </div>
+
+                            <p class="screen-text">
+                                Build Your Future
+                            </p>
+
+                        </div>
+
+                        <div class="laptop-base"></div>
+
+                    </div>
+
+                    <div class="image-decoration"></div>
+
+                </div>
+
             </div>
 
         </section>
 
-        <!-- About Section -->
+        <!-- ABOUT SECTION -->
         <section class="section about" id="about">
 
-            <h2>About Me</h2>
+            <div class="section-heading">
+                <span></span>
+                <h2>About Me</h2>
+                <span></span>
+            </div>
 
             <p>
                 I am a Computer Science Engineering student interested
@@ -83,76 +150,146 @@
 
         </section>
 
-        <!-- Skills Section -->
+        <!-- SKILLS SECTION -->
         <section class="section skills" id="skills">
 
-            <h2>My Technical Skills</h2>
+            <div class="section-heading">
+                <span></span>
+                <h2>My Technical Skills</h2>
+                <span></span>
+            </div>
 
             <div class="skills-grid">
-                <div class="skill-card">HTML</div>
-                <div class="skill-card">CSS</div>
-                <div class="skill-card">C Programming</div>
-                <div class="skill-card">Python</div>
-                <div class="skill-card">Java</div>
-                <div class="skill-card">Web Development</div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>C Programming</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">☕</div>
+                    <h3>Java</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>Web Development</h3>
+                </div>
+
             </div>
 
         </section>
 
-        <!-- Projects Section -->
+        <!-- PROJECTS SECTION -->
         <section class="section projects" id="projects">
 
-            <h2>My Projects</h2>
+            <div class="section-heading">
+                <span></span>
+                <h2>My Projects</h2>
+                <span></span>
+            </div>
 
             <div class="project-grid">
 
                 <article class="project-card">
+
+                    <div class="project-icon">💻</div>
+
                     <h3>Personal Portfolio</h3>
+
                     <p>
-                        A responsive personal website built using
-                        semantic HTML5 and advanced CSS3.
+                        A responsive personal website developed
+                        using semantic HTML5 and advanced CSS3.
                     </p>
+
+                    <span class="project-tag">
+                        HTML | CSS
+                    </span>
+
                 </article>
 
                 <article class="project-card">
+
+                    <div class="project-icon">🐍</div>
+
                     <h3>Python Converter</h3>
+
                     <p>
                         A converter application for temperature,
                         weight, length and angle.
                     </p>
+
+                    <span class="project-tag">
+                        Python
+                    </span>
+
                 </article>
 
                 <article class="project-card">
+
+                    <div class="project-icon">🚗</div>
+
                     <h3>Smart Parking System</h3>
+
                     <p>
                         A parking management application developed
                         using C programming and data structures.
                     </p>
+
+                    <span class="project-tag">
+                        C Programming
+                    </span>
+
                 </article>
 
             </div>
 
         </section>
 
-        <!-- Contact Section -->
+        <!-- CONTACT SECTION -->
         <section class="section contact" id="contact">
 
-            <h2>Let's Connect</h2>
+            <div class="contact-box">
 
-            <p>
-                Thank you for visiting my portfolio.
-                Feel free to connect with me.
-            </p>
+                <h2>Let's Connect</h2>
 
-            <a href="contact.html" class="btn">Get in Touch</a>
+                <p>
+                    Thank you for visiting my portfolio.
+                    Feel free to connect with me.
+                </p>
+
+                <a href="mailto:your-email@example.com" class="btn">
+                    Get in Touch →
+                </a>
+
+            </div>
 
         </section>
 
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>&copy; 2026 Casilda A. All Rights Reserved.</p>
+
+        <p>
+            &copy; 2026 Casilda A. All Rights Reserved.
+        </p>
+
     </footer>
 
     <script src="js/script.js"></script>
