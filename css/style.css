@@ -1,142 +1,427 @@
+
+/* ===============================
+   1. CSS VARIABLES
+================================ */
+
+:root {
+    --primary: #6c63ff;
+    --secondary: #8b85ff;
+    --background: #f8f9ff;
+    --surface: #ffffff;
+    --text: #22223b;
+    --muted: #666680;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    --radius: 14px;
+    --transition: 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --background: #121222;
+    --surface: #202038;
+    --text: #f5f5ff;
+    --muted: #c0c0d0;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===============================
+   2. GLOBAL STYLES
+================================ */
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #ffffff;
-    color: #222222;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background var(--transition),
+                color var(--transition);
 }
 
-/* Header */
-
-header {
-    background: #222222;
-    color: #ffffff;
-    padding: 20px;
-}
-
-nav {
-    max-width: 1000px;
-    margin: auto;
-}
-
-nav h1 {
-    margin: 0 0 15px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-nav a {
-    display: inline-block;
-    color: #ffffff;
+a {
     text-decoration: none;
-
-    padding: 12px 16px;
-    min-height: 44px;
+    color: inherit;
 }
 
-nav a:hover {
-    text-decoration: underline;
+ul {
+    list-style: none;
 }
-
-/* Main content */
-
-main {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-section,
-article {
-    margin-bottom: 30px;
-}
-
-/* Form */
-
-form {
-    max-width: 600px;
-}
-
-form div {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    font: inherit;
-
-    border: 2px solid #555555;
-    border-radius: 4px;
-}
-
-button {
-    padding: 12px 20px;
-    background: #222222;
-    color: #ffffff;
-
-    border: 2px solid #222222;
-    border-radius: 4px;
-
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Keyboard accessibility */
-
-a:focus,
-input:focus,
-textarea:focus,
-button:focus {
-    outline: 3px solid #005fcc;
-    outline-offset: 3px;
-}
-
-/* Skip link */
 
 .skip-link {
     position: absolute;
-    left: -9999px;
-    top: 10px;
-}
-
-.skip-link:focus {
+    top: -100px;
     left: 10px;
-
-    background: #ffffff;
-    color: #000000;
-
+    background: var(--primary);
+    color: white;
     padding: 10px;
     z-index: 1000;
 }
 
-/* Footer */
+.skip-link:focus {
+    top: 10px;
+}
 
-footer {
+/* ===============================
+   3. HEADER AND FLEXBOX NAVBAR
+================================ */
+
+.header {
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 70px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--primary);
+}
+
+.theme-toggle {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 13px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* ===============================
+   4. HERO SECTION
+================================ */
+
+.hero {
+    min-height: 75vh;
+    padding: 70px 8%;
+
+    display: grid;
+    place-items: center;
+
     text-align: center;
-    padding: 20px;
-    border-top: 1px solid #cccccc;
+
+    background:
+        radial-gradient(circle at top right,
+        rgba(108, 99, 255, 0.18),
+        transparent 45%);
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: fadeIn 1s ease;
+}
+
+.welcome {
+    color: var(--primary);
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero h2 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-bottom: 15px;
+}
+
+.hero-content > p:not(.welcome) {
+    color: var(--muted);
+}
+
+/* ===============================
+   5. BUTTONS WITH FLEXBOX
+================================ */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+    transition: transform var(--transition),
+                background var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    background: var(--secondary);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+/* ===============================
+   6. COMMON SECTIONS
+================================ */
+
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 65px 6%;
+}
+
+.section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about {
+    text-align: center;
+}
+
+.about p,
+.contact p {
+    max-width: 750px;
+    margin: auto;
+    color: var(--muted);
+}
+
+/* ===============================
+   7. CSS GRID - SKILLS
+================================ */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.skill-card {
+    background: var(--surface);
+    padding: 25px 10px;
+    text-align: center;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    font-weight: bold;
+    transition: transform var(--transition),
+                color var(--transition);
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    color: var(--primary);
+}
+
+/* ===============================
+   8. CSS GRID - PROJECTS
+================================ */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.project-card {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-bottom: 4px solid var(--primary);
+    transition: transform var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+}
+
+.project-card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: var(--muted);
+}
+
+/* ===============================
+   9. CONTACT SECTION
+================================ */
+
+.contact {
+    text-align: center;
+}
+
+.contact .btn {
+    margin-top: 25px;
+}
+
+/* ===============================
+   10. FOOTER
+================================ */
+
+.footer {
+    background: var(--surface);
+    padding: 25px;
+    text-align: center;
+    color: var(--muted);
+    box-shadow: var(--shadow);
+}
+
+/* ===============================
+   11. ANIMATION
+================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   12. TABLET RESPONSIVE
+================================ */
+
+@media (min-width: 600px) {
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* ===============================
+   13. DESKTOP RESPONSIVE
+================================ */
+
+@media (min-width: 900px) {
+
+    .navbar {
+        padding: 15px 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero {
+        min-height: 85vh;
+    }
+
+}
+
+/* ===============================
+   14. SMALL MOBILE DEVICES
+================================ */
+
+@media (max-width: 400px) {
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+        font-size: 13px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ===============================
+   15. ACCESSIBILITY
+================================ */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }
