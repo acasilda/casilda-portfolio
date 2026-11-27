@@ -1,76 +1,161 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casilda A - Computer Science Engineering Student Portfolio">
+    <meta name="author" content="Casilda A">
+    <meta name="robots" content="index, follow">
 
-<meta name="description"
-      content="Personal portfolio of a Computer Science Engineering student showcasing skills, projects and web development work.">
+    <title>Casilda A | CSE Portfolio</title>
 
-<meta name="author" content="Casilda A">
-
-<meta name="robots"
-      content="index, follow">
-<title>Casilda A | Computer Science Portfolio</title>
-
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-<a href="#main-content" class="skip-link">
-    Skip to main content
-</a>
-    <header>
-        <header role="banner">
 
-    <nav aria-label="Main navigation">
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
 
-        <h1>My Portfolio</h1>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar" aria-label="Main navigation">
 
-        <ul>
-            <li>
-                <a href="index.html" aria-current="page">Home</a>
-            </li>
+            <a href="index.html" class="logo">Casilda<span>.</span></a>
 
-            <li>
-                <a href="about.html">About</a>
-            </li>
+            <ul class="nav-links">
+                <li><a href="#home" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
 
-            <li>
-                <a href="projects.html">Projects</a>
-            </li>
+            <button id="theme-toggle"
+                    class="theme-toggle"
+                    aria-label="Switch to dark mode">
+                🌙
+            </button>
 
-            <li>
-                <a href="contact.html">Contact</a>
-            </li>
-        </ul>
-
-    </nav>
-
-</header>
+        </nav>
     </header>
 
-    <main>
-<main id="main-content"></main>
-        <h2>Welcome</h2>
+    <main id="main-content">
 
-        <p>
-            Hello, I am a Computer Science student.
-        </p>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+                <p class="welcome">WELCOME TO MY PORTFOLIO</p>
+
+                <h1>Hello, I'm <span>Casilda A</span></h1>
+
+                <h2>Computer Science Engineering Student</h2>
+
+                <p>
+                    Passionate about programming, web development,
+                    logical thinking and creating innovative solutions
+                    through technology.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn">View My Projects</a>
+                    <a href="contact.html" class="btn secondary">Contact Me</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+                I am a Computer Science Engineering student interested
+                in software development and modern technologies.
+                I enjoy learning new programming languages,
+                solving problems and developing creative applications.
+            </p>
+
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section skills" id="skills">
+
+            <h2>My Technical Skills</h2>
+
+            <div class="skills-grid">
+                <div class="skill-card">HTML</div>
+                <div class="skill-card">CSS</div>
+                <div class="skill-card">C Programming</div>
+                <div class="skill-card">Python</div>
+                <div class="skill-card">Java</div>
+                <div class="skill-card">Web Development</div>
+            </div>
+
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section projects" id="projects">
+
+            <h2>My Projects</h2>
+
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>Personal Portfolio</h3>
+                    <p>
+                        A responsive personal website built using
+                        semantic HTML5 and advanced CSS3.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Python Converter</h3>
+                    <p>
+                        A converter application for temperature,
+                        weight, length and angle.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Smart Parking System</h3>
+                    <p>
+                        A parking management application developed
+                        using C programming and data structures.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+
+            <h2>Let's Connect</h2>
+
+            <p>
+                Thank you for visiting my portfolio.
+                Feel free to connect with me.
+            </p>
+
+            <a href="contact.html" class="btn">Get in Touch</a>
+
+        </section>
 
     </main>
 
-    <footer role="contentinfo">
-
-        <p>
-            &copy; 2026 My Portfolio
-        </p>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Casilda A. All Rights Reserved.</p>
     </footer>
 
-</body>
+    <script src="js/script.js"></script>
 
+</body>
 </html>
